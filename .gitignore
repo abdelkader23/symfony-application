@@ -1,0 +1,12 @@
+/web/bundles/
+/app/bootstrap.php.cache
+/app/config/parameters.yml
+/app/phpunit.xml
+/build/
+/vendor/
+/bin/
+/composer.phar
+
+/.idea/
+/run.sh
+/remove.sh

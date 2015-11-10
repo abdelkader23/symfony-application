@@ -1,0 +1,27 @@
+application:
+    image: endroid/docker-application
+    volumes:
+        - .:/var/www/html
+php:
+    build: docker/php/
+    volumes_from:
+        - application
+    expose:
+        - 9000:9000
+nginx:
+    build: docker/nginx/
+    volumes_from:
+        - application
+    links:
+        - php
+    ports:
+        - 80:80
+mysql:
+    image: mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: application
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
+    ports:
+        - 3306:3306
