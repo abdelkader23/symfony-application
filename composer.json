@@ -2,7 +2,7 @@
     "name": "endroid/symfony-demo",
     "license": "MIT",
     "type": "project",
-    "description": "Symfony Demo",
+    "description": "Symfony Demo Application",
     "autoload": {
         "psr-4": { "": "src/" }
     },
