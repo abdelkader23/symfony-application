@@ -8,6 +8,8 @@ php:
         - ~/.ssh:/root/.ssh
     volumes_from:
         - application
+    links:
+        - mysql
     expose:
         - 9000:9000
 nginx:
