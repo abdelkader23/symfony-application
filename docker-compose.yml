@@ -4,6 +4,8 @@ application:
         - .:/var/www/html
 php:
     build: docker/php/
+    volumes:
+        - ~/.ssh:/root/.ssh
     volumes_from:
         - application
     expose:
