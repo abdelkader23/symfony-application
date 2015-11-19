@@ -1,14 +1,16 @@
-/web/bundles/
-/app/bootstrap.php.cache
-/app/cache/
 /app/config/parameters.yml
-/app/logs/
-/app/phpunit.xml
 /build/
+/phpunit.xml
+/var/
+!var/cache/.gitkeep
+!var/logs/.gitkeep
+!var/sessions/.gitkeep
 /vendor/
-/bin/
-/composer.phar
+/web/bundles/
 
+# IDE
 /.idea/
-/run.sh
-/remove.sh
+
+# Front end assets
+/bower_components/
+/node_modules/

@@ -13,13 +13,12 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
         );
 
-        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+        if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
@@ -29,36 +28,31 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader)
+    public function getRootDir()
     {
-        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+        return __DIR__;
     }
 
-    /**
-     * Write cache to memory to speed up development environment.
-     *
-     * @return string
-     */
     public function getCacheDir()
     {
         if (in_array($this->environment, array('dev', 'test'))) {
             return '/dev/shm/'.md5(getcwd()).'/cache/'.$this->environment;
         }
 
-        return parent::getCacheDir();
+        return dirname(__DIR__).'/var/cache/'.$this->environment;
     }
 
-    /**
-     * Write log to memory to speed up development environment.
-     *
-     * @return string
-     */
     public function getLogDir()
     {
         if (in_array($this->environment, array('dev', 'test'))) {
             return '/dev/shm/'.md5(getcwd()).'/logs';
         }
 
-        return parent::getLogDir();
+        return dirname(__DIR__).'/var/logs';
+    }
+
+    public function registerContainerConfiguration(LoaderInterface $loader)
+    {
+        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
     }
 }

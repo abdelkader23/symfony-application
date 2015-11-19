@@ -12,6 +12,15 @@ php:
         - mysql
     expose:
         - 9000:9000
+mysql:
+    image: mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: symfony_demo
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root
+    ports:
+        - 3306:3306
 nginx:
     build: docker/nginx/
     volumes_from:
@@ -20,12 +29,7 @@ nginx:
         - php
     ports:
         - 80:80
-mysql:
-    image: mysql
-    environment:
-        MYSQL_ROOT_PASSWORD: root
-        MYSQL_DATABASE: application
-        MYSQL_USER: root
-        MYSQL_PASSWORD: root
-    ports:
-        - 3306:3306
+grunt:
+    build: docker/grunt/
+    volumes_from:
+        - application
