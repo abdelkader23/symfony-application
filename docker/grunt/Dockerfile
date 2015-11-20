@@ -1,3 +1,4 @@
 FROM node
 
-EXPOSE 8080
+RUN npm install -g bower grunt-cli
+
