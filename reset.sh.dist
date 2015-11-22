@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+app/console cache:clear --env=dev

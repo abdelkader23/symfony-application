@@ -3,17 +3,17 @@
 	email = info@endroid.nl
 
 [alias]
-       s = status
-       a = !git add -A && git status
-       c = commit -m
-       ac = !git add -A && git commit -m
-       d = diff --color-words
-       p = push
-       pr = pull --rebase
-       r = rebase -i HEAD~3
+    s = status
+    a = !git add -A && git status
+    c = commit -m
+    ac = !git add -A && git commit -m
+    d = diff --color-words
+    p = push
+    pr = pull --rebase
+    r = rebase -i HEAD~3
 
 [color]
-       ui = true
+    ui = true
 
 [push]
 	default = matching
