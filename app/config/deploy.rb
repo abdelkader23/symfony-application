@@ -14,8 +14,8 @@ ssh_options[:use_agent] = false
 set :user, "endroid"
 set :use_sudo, false
 
-role :web, domain
-role :app, domain, :primary => true
+role :web, "localhost"
+role :app, "localhost", :primary => true
 
 set :keep_releases, 2
 
