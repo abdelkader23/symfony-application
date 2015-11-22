@@ -9,6 +9,11 @@
 /web/assets/
 /web/bundles/
 
+# Deployment
+/current
+/releases/
+/shared/
+
 # IDE
 /.idea/
 
