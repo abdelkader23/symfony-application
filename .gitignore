@@ -6,7 +6,6 @@
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
 /vendor/
-/web/assets/
 /web/bundles/
 
 # Deployment
