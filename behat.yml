@@ -1,0 +1,14 @@
+default:
+    extensions:
+        Behat\Symfony2Extension: ~
+        Behat\MinkExtension:
+            sessions:
+                default:
+                    symfony2: ~
+    suites:
+        app:
+            type: symfony_bundle
+            bundle: AppBundle
+        pdf:
+            type: symfony_bundle
+            bundle: PdfBundle
