@@ -17,8 +17,7 @@ services:
 before_install:
     - if [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then phpenv config-rm xdebug.ini; fi;
     - mysql -e 'create database symfony_application;'
-    - composer self-update
-    - composer install --no-interaction
+    - composer self-update && composer install --no-interaction
     - sudo curl -O 'http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-precise-amd64.deb'
     - sudo apt-get update && sudo apt-get install -y openssl build-essential xorg libssl-dev xfonts-75dpi
     - sudo dpkg -i ./wkhtmltox-0.12.2.1_linux-precise-amd64.deb
