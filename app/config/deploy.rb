@@ -2,11 +2,11 @@ set :symfony_console, "bin/console"
 set :log_path, "var/logs"
 set :cache_path, "var/cache"
 
-set :application, "symfony-demo.endroid.nl"
+set :application, "symfony-application.endroid.nl"
 set :domain, "#{application}"
-set :deploy_to, "/home/endroid/vhosts/#{domain}"
+set :deploy_to, "/var/www/#{domain}"
 
-set :repository, "git@github.com:endroid/symfony-demo.git"
+set :repository, "git@github.com:endroid/symfony-application.git"
 set :scm, :git
 
 ssh_options[:use_agent] = false
@@ -29,7 +29,7 @@ end
 after "deploy:finalize_update" do
   run "setfacl -R -m u:www-data:rwx -m u:endroid:rwx #{latest_release}/#{cache_path} #{latest_release}/#{log_path} #{latest_release}/web/uploads"
   run "setfacl -dR -m u:www-data:rwx -m u:endroid:rwx #{latest_release}/#{cache_path} #{latest_release}/#{log_path} #{latest_release}/web/uploads"
-  run "cd #{latest_release} && sh reset.sh"
+  run "cd #{latest_release} && export SYMFONY_ENV=prod && sh reset.sh"
 end
 
 after "deploy:restart", "deploy:cleanup"
