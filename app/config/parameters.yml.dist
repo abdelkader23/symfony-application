@@ -2,9 +2,11 @@
 # Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
 # http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
+    application_key:   symfony_application
+
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony_demo
+    database_name:     symfony_application
     database_user:     root
     database_password: ~
     # You should uncomment this if you want use pdo_sqlite
@@ -17,3 +19,8 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    redis_host:        127.0.0.1
+
+    # PdfBundle
+    wkhtmltopdf_binary: /usr/local/bin/wkhtmltopdf

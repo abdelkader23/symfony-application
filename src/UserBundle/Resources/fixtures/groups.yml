@@ -1,0 +1,7 @@
+groups:
+    group_superadmin:
+        name: Super administrators
+        roles: [ ROLE_SUPER_ADMIN ]
+    group_admin:
+        name: Administrators
+        roles: [ ROLE_ADMIN ]

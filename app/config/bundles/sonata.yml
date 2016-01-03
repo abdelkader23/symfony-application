@@ -1,0 +1,9 @@
+sonata_admin:
+    title: Symfony Application
+#    title_logo: bundles/app/images/fancy_acme_logo.png
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]

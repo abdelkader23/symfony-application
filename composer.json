@@ -32,7 +32,7 @@
         "iio/libmergepdf": "^2.4",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/admin-bundle": "dev-master",
-        "symfony/security-acl": "dev-master",
+        "symfony/security-acl": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
