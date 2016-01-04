@@ -26,8 +26,3 @@
 # Front end assets
 /bower_components/
 /node_modules/
-
-# Shortcuts
-/reset.sh
-/run.sh
-/stop.sh
