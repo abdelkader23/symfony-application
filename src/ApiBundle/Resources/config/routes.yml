@@ -1,0 +1,4 @@
+api_news:
+    resource:     "NewsBundle\\Controller\\ArticleApiController"
+    type:         rest
+    name_prefix:  api_

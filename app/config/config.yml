@@ -36,6 +36,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        assetsDir: "%kernel.root_dir%/../web/assets/"
 
 # Doctrine Configuration
 doctrine:
